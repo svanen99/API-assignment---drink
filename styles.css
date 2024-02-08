@@ -1,0 +1,184 @@
+:root {
+    --primary--background-color:#d8ebcd;
+    --lighter--background-color:#e5f7da;
+
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    background-color: var(--primary--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 20px; 
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--lighter--background-color);
+    padding: 13px;
+    position: static;
+    border-radius: 12px;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+h1 {
+    text-shadow: 12px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+button {
+    /* display: flex; */
+    font-size: 28px;
+    border-radius: 10px;
+    border-color: green;
+    border-style: dashed;
+    color: green;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(251, 202, 60);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.button-container, 
+#pokemonName::placeholder {
+color: green; 
+border-color: green;
+display: flex;
+align-content: left;
+justify-content: space-around;
+
+}
+
+
+.main-container, 
+#pokemonName::placeholder {
+color: green; 
+border-color: green;
+display: flex;
+align-content: right;
+justify-content: space-around;
+padding-right: 10px;
+margin: 17px;
+font-size: 12px;
+}
+
+#pokemonSprite {
+    display: none;
+    width: 250px;
+    height: 240px;
+    
+}
+
+.pikachu {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-content: right;
+}
+
+#pokemonName {
+    width:250px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: left; 
+    padding-left: 8px;
+}
+
+#placeholder {
+    text-align: center;
+}
+
+
+@media screen and (max-width: 600px){ 
+    body {
+        background-color: var(--primary--background-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        margin: 20px; 
+    }
+    #placeholder {
+        text-align: center;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--lighter--background-color);
+        padding: 13px;
+        position: static;
+        border-radius: 12px;
+    }
+
+    #pokemonName {
+        width:250px;
+        height: 40px;
+        border-radius: 10px;
+        text-align: left; 
+        padding-left: 8px;
+    }
+
+    .pikachu {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-content: right;
+    }
+
+    #pokemonSprite {
+        display: none;
+        width: 250px;
+        height: 240px;
+        
+    }
+
+    .button-container, 
+    #pokemonName::placeholder {
+        color: green; 
+        border-color: green;
+        display: flex;
+        align-content: left;
+        justify-content: space-around;
+
+    }
+
+    .main-container, 
+    #pokemonName::placeholder {
+        color: green; 
+        border-color: green;
+        display: flex;
+        align-content: right;
+        justify-content: space-around;
+        padding-right: 10px;
+        margin: 17px;
+        font-size: 12px;
+    }
+
+    .logo {
+        max-width: 100px;
+    }
+    
+    h1 {
+        text-shadow: 12px;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
+
+
