@@ -3,25 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon Time!</title>
+    <title>Drink time!</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="./jquery-3.7.1.min.js"></script>
     <script src="./index.js"defer></script>
 </head>
 <header>
-    <div class="logo">
-    <img class="pikachu" src="./image/Pokemon-PNG-Clipart.png" alt="picture of Pikachu">
-    </div>
-    <h1>Pokémon Time! <3</h1>
-
+    <div class="header-container">
+    <img class="martini" src="./image/STK190.webp" alt="espressomartini-glass">
+    <h1>Drink Time! <3</h1>
+</div>
 </header>
 <body>
+    <p class="header-text">Enter your favorite drink and get a serving example</p>
     <div class="main-container">
-    <input type="text" id="pokemonName" placeholder="Enter Your Favorite Pokemon!"/> 
+        <input type="text" id="drinkName" placeholder="Enter Your Favorite Drink" />
     </div>  
     <div class="button-container">
-    <button onclick="fetchData()">Get Pokémon</button><br>
+        <button onclick="getDrink()">Get Serving Ex</button><br>
     </div>
-    <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none">
+    <div class="drink-details">
+        <div class="drink-info-container">
+            <h2 id="drinkTitle"></h2>
+            <div id="drinkImageWrapper">
+            <img src="" alt="Drink Image" id="drinkImage" display="hide">
+            <p id="drinkInstructions"></p>
+        </div>
+    </div>
+    
 </body>
 </html>

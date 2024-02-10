@@ -17,28 +17,18 @@ body {
     margin: 20px; 
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--lighter--background-color);
-    padding: 13px;
-    position: static;
-    border-radius: 12px;
-}
-
-.logo {
-    max-width: 100px;
-}
-
 h1 {
-    text-shadow: 12px;
-    text-align: center;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #dc65ba;
+}
+
+.header-text {
     font-family: 'Courier New', Courier, monospace;
 }
 button {
-    /* display: flex; */
-    font-size: 28px;
+    display: flex; 
+    font-size: 25px;
     border-radius: 10px;
     border-color: green;
     border-style: dashed;
@@ -48,59 +38,86 @@ button {
 }
 
 button:hover {
-    background-color: rgb(251, 202, 60);
+    background-color: #dc65ba;
     font-family: 'Courier New', Courier, monospace;
 }
-
-
-.button-container, 
-#pokemonName::placeholder {
-color: green; 
-border-color: green;
-display: flex;
-align-content: left;
-justify-content: space-around;
-
-}
-
-
-.main-container, 
-#pokemonName::placeholder {
-color: green; 
-border-color: green;
-display: flex;
-align-content: right;
-justify-content: space-around;
-padding-right: 10px;
-margin: 17px;
-font-size: 12px;
-}
-
-#pokemonSprite {
-    display: none;
-    width: 250px;
-    height: 240px;
-    
-}
-
-.pikachu {
-    width: 200px;
-    height: 200px;
-    display: flex;
-    align-content: right;
-}
-
-#pokemonName {
-    width:250px;
-    height: 40px;
-    border-radius: 10px;
-    text-align: left; 
-    padding-left: 8px;
-}
-
 #placeholder {
     text-align: center;
+    width: 200px;
+    height: 100px;
 }
+
+
+#drinkName {
+    text-align: center;
+    width: 230px; 
+    height: 30px; 
+    font-size: 15px; 
+    padding: 12px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 12px;
+}
+
+
+.martini {
+    width: 50x;
+    height: 200px;
+    margin-right: 10px;
+
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lighter--background-color);
+    border-radius: 10px;
+}
+
+#drinkInstructions{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    width: 430px;
+}
+
+#drinkTitle {
+    font-family: cursive;
+}
+
+#drinkImageWrapper {
+    text-align: center;
+    display: none; 
+}
+
+#drinkImage {
+    border-radius: 10px;
+    border-style: dashed;
+    width: 250px;
+    height: 250px;
+}
+
+
+
+#drinkTitle {
+    text-align: center;
+}
+
+.drink-details {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.drink-info-container {
+    text-align: center;
+}
+
 
 
 @media screen and (max-width: 600px){ 
@@ -126,49 +143,6 @@ font-size: 12px;
         border-radius: 12px;
     }
 
-    #pokemonName {
-        width:250px;
-        height: 40px;
-        border-radius: 10px;
-        text-align: left; 
-        padding-left: 8px;
-    }
-
-    .pikachu {
-        width: 200px;
-        height: 200px;
-        display: flex;
-        align-content: right;
-    }
-
-    #pokemonSprite {
-        display: none;
-        width: 250px;
-        height: 240px;
-        
-    }
-
-    .button-container, 
-    #pokemonName::placeholder {
-        color: green; 
-        border-color: green;
-        display: flex;
-        align-content: left;
-        justify-content: space-around;
-
-    }
-
-    .main-container, 
-    #pokemonName::placeholder {
-        color: green; 
-        border-color: green;
-        display: flex;
-        align-content: right;
-        justify-content: space-around;
-        padding-right: 10px;
-        margin: 17px;
-        font-size: 12px;
-    }
 
     .logo {
         max-width: 100px;
@@ -179,6 +153,17 @@ font-size: 12px;
         text-align: center;
         font-family: 'Courier New', Courier, monospace;
     }
+
+    
+    #drinkImage {
+        width: 100%;
+        max-width: 250px; 
+        margin: auto; 
+    }
+
+    #drinkInstructions{
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        width: 100%;
+    }
 }
-
-

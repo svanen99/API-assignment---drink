@@ -1,60 +1,37 @@
+$(document).ready(() => {
+    const DRINK_API_URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
-async function fetchPokemonData(pokemonName) {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-    
-    if (!response.ok) {
-        throw new Error(`Could not catch your Pokémon. Status: ${response.status}`);
+    $("#drinkImageWrapper").hide();
+
+    window.getDrink = async () => {
+        const drinkName = $("#drinkName").val().trim();
+
+        if (!drinkName) {
+            $(".drink-details").html("Please enter a drink name.");
+            $("#drinkImageWrapper").hide();
+            return;
+        }
+
+        try {
+            const response = await fetch(`${DRINK_API_URL}${drinkName}`);
+            const data = await response.json();
+            renderDrink(data.drinks?.[0]);
+        } catch (error) {
+            $(".drink-details").html(`Sorry! Could not load ${error}`);
+            $("#drinkImageWrapper").hide();
+        }
     }
 
-    return await response.json();
-}
-function renderPokemonImage(pokemonSprite) {
-    const imgElement = document.getElementById("pokemonSprite");
-    imgElement.src = pokemonSprite;
-    imgElement.style.display = "block";
-}
-function handleFetchError(error) {
-    console.log(error);
-}
-
-async function fetchData() {
-    try {
-        const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
-        const data = await fetchPokemonData(pokemonName);
-        console.log(data);
-        const pokemonSprite = data.sprites.front_default;
-        renderPokemonImage(pokemonSprite);
-    } catch (error) {
-        handleFetchError(error);
+    const renderDrink = (drink) => {
+        if (drink) {
+            $("#drinkTitle").text(drink.strDrink);
+            $("#drinkImage").attr("src", drink.strDrinkThumb);
+            $("#drinkInstructions").text(drink.strInstructions);
+            $("#drinkImageWrapper").show();
+            $(".drink-details").show();
+        } else {
+            $(".drink-details").html("Drink not found.");
+            $("#drinkImageWrapper").hide();
+        }
     }
-}
-
-
-fetchData();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
