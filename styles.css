@@ -118,6 +118,10 @@ img {
     text-align: center;
 }
 
+.error {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 
 
 @media screen and (max-width: 600px){ 
@@ -165,5 +169,9 @@ img {
         font-family: 'Courier New', Courier, monospace;
         text-align: center;
         width: 100%;
+    }
+
+    .error {
+        font-family: 'Courier New', Courier, monospace;
     }
 }

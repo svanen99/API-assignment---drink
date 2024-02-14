@@ -6,13 +6,13 @@
     <title>Drink time!</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="./jquery-3.7.1.min.js"></script>
-    <script src="./index.js"defer></script>
+    <script src="./index.js" defer></script>
 </head>
 <header>
     <div class="header-container">
-    <img class="martini" src="./image/STK190.webp" alt="espressomartini-glass">
-    <h1>Drink Time! <3</h1>
-</div>
+        <img class="martini" src="./image/STK190.webp" alt="espressomartini-glass">
+        <h1>Drink Time! <3</h1>
+    </div>
 </header>
 <body>
     <p class="header-text">Enter your favorite drink and get a serving example</p>
@@ -22,11 +22,15 @@
     <div class="button-container">
         <button onclick="getDrink()">Get Serving Ex</button><br>
     </div>
+
     <div class="drink-details">
-        <div class="drink-info-container">
-            <h2 id="drinkTitle"></h2>
-            <div id="drinkImageWrapper">
-            <img src="" alt="Drink Image" id="drinkImage" display="hide">
+        <div class="error"></div>
+    </div>
+
+    <div class="drink-info-container">
+        <h2 id="drinkTitle"></h2>
+        <div id="drinkImageWrapper">
+            <img id="drinkImage" src="" alt="Drink Image">
             <p id="drinkInstructions"></p>
         </div>
     </div>

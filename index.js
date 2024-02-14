@@ -6,21 +6,28 @@ $(document).ready(() => {
     window.getDrink = async () => {
         const drinkName = $("#drinkName").val().trim();
 
+        $(".error").text("");
+
         if (!drinkName) {
-            $(".drink-details").html("Please enter a drink name.");
-            $("#drinkImageWrapper").hide();
+            $(".error").text("Please enter a drink name.");
+            $(".drink-info-container").hide();
             return;
         }
 
         try {
             const response = await fetch(`${DRINK_API_URL}${drinkName}`);
             const data = await response.json();
-            renderDrink(data.drinks?.[0]);
+
+            if (!data.drinks) {
+                throw new Error("Drink not found.");
+            }
+
+            renderDrink(data.drinks[0]);
         } catch (error) {
-            $(".drink-details").html(`Sorry! Could not load ${error}`);
-            $("#drinkImageWrapper").hide();
+            $(".error").text(`Try again? ${error.message} :/`);
+            $(".drink-info-container").hide();
         }
-    }
+    };
 
     const renderDrink = (drink) => {
         if (drink) {
@@ -28,10 +35,10 @@ $(document).ready(() => {
             $("#drinkImage").attr("src", drink.strDrinkThumb);
             $("#drinkInstructions").text(drink.strInstructions);
             $("#drinkImageWrapper").show();
-            $(".drink-details").show();
+            $(".drink-info-container").show();
         } else {
-            $(".drink-details").html("Drink not found.");
-            $("#drinkImageWrapper").hide();
+            $(".error").text("Drink not found, you could try again?:)");
+            $(".drink-info-container").hide();
         }
-    }
+    };
 });
